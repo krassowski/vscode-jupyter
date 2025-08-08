@@ -61,7 +61,6 @@ jobs:
   build-vsix:
     name: Build VSIX
     runs-on: ubuntu-latest
-    if: github.repository == 'microsoft/vscode-jupyter'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -104,7 +103,6 @@ jobs:
   lint:
     name: Lint
     runs-on: ubuntu-latest
-    if: github.repository == 'microsoft/vscode-jupyter'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -188,7 +186,6 @@ jobs:
   ts_tests:
     name: Type Script Tests
     runs-on: ${{ matrix.os }}
-    if: github.repository == 'microsoft/vscode-jupyter'
     strategy:
       fail-fast: false
       matrix:
@@ -262,7 +259,6 @@ jobs:
   vscodeTests:
     name: Tests # These tests run with Python extension & real Jupyter
     runs-on: ${{ matrix.os }}
-    if: github.repository == 'microsoft/vscode-jupyter'
     env:
       VSC_PYTHON_FORCE_LOGGING: 1
       VSC_JUPYTER_CI_RUN_NON_PYTHON_NB_TEST: 1
